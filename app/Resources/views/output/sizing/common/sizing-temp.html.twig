@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <section>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="nav nav-tabs">
+                        <li class=""><a href="/head-balance" aria-expanded="false">Preminary Results</a></li>
+                        <li class="active"><a href="/out-sizing-result" aria-expanded="false">Sizing Result</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Temperature Profile
+                <small>Summary info</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Sizing Results</li>
+            </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <!-- Main row -->
+            <div class="row">
+                <!-- nav-tab-cus-Preminaty -->
+                <div class="nav-tabs-custom">
+                    <!-- tab-content Preminary -->
+                    <div class="tab-content">
+                        <!-- nav-tab-custome Calculate mode -->
+                        <div class="nav-tabs-custom">
+                            <!-- nav-tab calculate mode -->
+                            <ul class="nav nav-tabs">
+                                <li class="pull-right header"><i class="fa fa-calculator"></i> Output</li>
+                            </ul>
+                            <!-- /.nav-tab calculate mode -->
+                            <!-- tab-content calculate mode -->
+                            <div class="tab-content">
+
+
+                                <!-- nav-tab-custom heat, consum, econo -->
+                                <div class="nav-tabs-custom">
+                                    <!-- nav-tab-custom heat, consum, econo -->
+                                    <ul class="nav nav-tabs pull-right" style="background:#fff">
+                                        <li class="active"><a href="/temp-profile">Temperature Profile</a></li>
+                                        <li><a href="/out-sizing-result">Sizing Result</a></li>
+                                    </ul>
+                                    <!--/. nav-tab-custom heat, consum, econo -->
+                                    <div class="tab-content" style="background:#fff">
+										<div class="row">
+										    <div class="col-md-1">
+										        <label>Equipment: </label>
+										    </div>
+										    <div class="col-md-4">
+												{% if studEquipProfileList != "" %}
+										        <select class="form-control" name="eid" id="equipIdTempProfile" onchange="loadChartTemp()">
+										        	{% for key,value in studEquipProfileList %}
+										            <option value="{{ value.id }}" {% if key == 0 %}selected{% endif %}>{{ value.name }}</option>
+										        	{% endfor %}
+							                    </select>
+							                    {% endif %}
+						                    </div>
+										</div>
+										<legend>Curve</legend>
+										<div style="width:70%;margin: auto;margin-top: 20px">
+									        <canvas id="tempChart"></canvas>
+									    </div>
+
+									    <div style="width:70%;margin: auto;margin-top: 20px">
+									        <canvas id="convChart"></canvas>
+									    </div>
+                                 		
+                                	</div>
+                                </div>
+                                <!--/. nav-tab-custom heat, consum, econo -->
+                            </div>
+                            <!-- /.tab-content calculate mode -->
+                        </div>
+                        <!-- /.nav-tab-custome Calculate mode -->
+
+                        <!-- /.tab-pane preminary -->
+                    </div>
+                    <!-- /.tab-content Preminary -->
+                </div>
+                <!--/. nav-tab-cus-Preminaty -->
+            </div>
+            <!-- /.close main row -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 3.0
+        </div>
+        <strong>Copyright &copy; 2017 <a href="#">CryoSoft</a>.</strong> All rights reserved.
+    </footer>
+
+</div>
+<!-- ./wrapper -->
+</body>
+{% endblock %}
+

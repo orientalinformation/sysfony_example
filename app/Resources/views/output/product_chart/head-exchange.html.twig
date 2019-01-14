@@ -1,0 +1,146 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <section>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="nav nav-tabs">
+                        <li class=""><a href="/head-balance" aria-expanded="false">Preminary Results</a></li>
+                        <li><a href="/out-sizing-result" aria-expanded="false">Sizing Result</a></li>
+                        <li class="active"><a href="/head-exchange" aria-expanded="false">Product Chart</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Heat Change
+                <small>Summary info</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Heat Change</li>
+            </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <!-- Main row -->
+            <div class="row">
+                <!-- nav-tab-cus-Preminaty -->
+                <div class="nav-tabs-custom">
+                    <!-- tab-content Preminary -->
+                    <div class="tab-content">
+                        <!-- nav-tab-custome Calculate mode -->
+                        <div class="nav-tabs-custom">
+                            <!-- nav-tab calculate mode -->
+                            <ul class="nav nav-tabs">
+                                <li class="pull-right header"><i class="fa fa-calculator"></i> Output</li>
+                            </ul>
+                            <!-- /.nav-tab calculate mode -->
+                            <!-- tab-content calculate mode -->
+                            <div class="tab-content">
+
+
+                                <!-- nav-tab-custom heat, consum, econo -->
+                                <div class="nav-tabs-custom">
+                                    <!-- nav-tab-custom heat, consum, econo -->
+                                    <ul class="nav nav-tabs pull-right" style="background:#fff">
+                                        <li><a href="product_2D_outline.html">2D OutLine</a></li>
+                                        <li><a href="product_time_base.html">Time Base</a></li>
+                                        <li><a href="product_section.html">Product section</a></li>
+                                        <li class="active"><a href="head-exchange">Heat Change</a></li>
+                                        <li><a href="#">Location</a></li>
+                                    </ul>
+                                    <!--/. nav-tab-custom heat, consum, econo -->
+                                    <div class="tab-content" style="background:#fff">
+										<h4>Select</h4>
+										<form class="form-inline">
+										    <div class="form-group">
+										        <a href="#" onclick='show(1);' class="btn btn-flat bg-orange buttons"><i class="fa fa-bar-chart"></i> Cruve</a>
+										        <a href="#" onclick='show(2);' class="btn btn-flat bg-purple buttons"><i class="fa fa-bars"></i> Value</a>
+										    </div>
+										</form>
+										<div id="graph-value1" style="display: block;margin-top: 10px">
+										    <legend>Curve</legend>
+										    <div style="width: 70%;margin: auto;margin-top: 20px" id="headExchangeData" data-chart="{{ dataChart }}">
+										        <canvas id="headExchangeGrap"></canvas>
+										    </div>
+										</div>
+										<div id="graph-value2">
+										    <h4>Equipment</h4>
+										    <div class="table-responsive">
+										        <table class="table table-bordered">
+										            <tr>
+										                <th colspan="11">Enthalpy (kj/kg) vs Time (s)</th>
+										            </tr>
+										            <tr>
+										                <td>Equipment</td>
+										                <td>0.00</td>
+										                <td>50.00</td>
+										                <td>11.00</td>
+										                <td>160.6</td>
+										                <td>20.5</td>
+										                <td>260.00</td>
+										                <td>44.8</td>
+										                <td>55.3</td>
+										                <td>10.9</td>
+										                <td>338.0</td>
+										            </tr>
+										            <tr>
+										                <td>Name Equipment</td>
+										                <td>0.00</td>
+										                <td>50.00</td>
+										                <td>11.00</td>
+										                <td>160.6</td>
+										                <td>20.5</td>
+										                <td>260.00</td>
+										                <td>44.8</td>
+										                <td>55.3</td>
+										                <td>10.9</td>
+										                <td>338.0</td>
+										            </tr>
+
+
+
+										        </table>
+										    </div>
+										</div>
+										<!-- /.tab-content heat, consum, econo  -->
+                                 		
+                                	</div>
+                                </div>
+                                <!--/. nav-tab-custom heat, consum, econo -->
+                            </div>
+                            <!-- /.tab-content calculate mode -->
+                        </div>
+                        <!-- /.nav-tab-custome Calculate mode -->
+
+                        <!-- /.tab-pane preminary -->
+                    </div>
+                    <!-- /.tab-content Preminary -->
+                </div>
+                <!--/. nav-tab-cus-Preminaty -->
+            </div>
+            <!-- /.close main row -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 3.0
+        </div>
+        <strong>Copyright &copy; 2017 <a href="#">CryoSoft</a>.</strong> All rights reserved.
+    </footer>
+
+</div>
+<!-- ./wrapper -->
+</body>
+{% endblock %}
+
